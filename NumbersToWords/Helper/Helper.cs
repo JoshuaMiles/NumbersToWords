@@ -32,7 +32,6 @@ namespace NumbersToWords
             SEVENTEEN = 17,
             EIGHTEEN = 18,
             NINETEEN = 19
-
         }
 
         enum Tens
@@ -58,9 +57,9 @@ namespace NumbersToWords
             QUADRILLION = 5,
             QUINTILLION = 6
         }
+        
         public static string NumbersToWords(decimal number)
         {
-           
             long dollars = (long)number;
             decimal cents = Decimal.Subtract(number, Decimal.Floor(number)) * 100;
 
@@ -72,6 +71,7 @@ namespace NumbersToWords
                 }
                 return "ZERO DOLLARS";
             }
+            
             if (dollars == 1)
             {
                 if (cents != 0)
@@ -80,6 +80,7 @@ namespace NumbersToWords
                 }
                 return ((Single)dollars).ToString() + " DOLLAR";
             }
+            
             if (dollars <= 10)
             {
                 if (cents != 0)
@@ -101,7 +102,6 @@ namespace NumbersToWords
                 dollars /= 1000;
             } while (dollars > 0);
            
-
             foreach (KeyValuePair<int, long> item in dict)
             {
                 //Cast Enum Powers (The orders of magnitude) which correlates to the key
@@ -120,7 +120,6 @@ namespace NumbersToWords
 
                     }
                 }
-                
             }
 
             //remove leading "AND"....
@@ -132,6 +131,7 @@ namespace NumbersToWords
             if(cents != 0) {
                 return returnWord.TrimEnd() + " DOLLARS"  + " AND " + GetHundredWord((int)cents) + " CENTS" ;
             }
+            
             return returnWord.TrimEnd() + " DOLLARS";
         }
 
@@ -147,6 +147,7 @@ namespace NumbersToWords
             {
                 return ((Teens)number).ToString();
             }
+            
             if (number <= 99)
             {
                 //two component number
@@ -154,10 +155,10 @@ namespace NumbersToWords
                 long single = number % 10;
 
                 returnWord = ((Tens)tens).ToString();
+                
                 //if the number is a 'composite' number
                 if (single != 0)
-                {
-                    
+                { 
                     if (number <= 12)
                     {
                         returnWord =  ((Single)number).ToString();
