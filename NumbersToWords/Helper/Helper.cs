@@ -68,7 +68,7 @@ namespace NumbersToWords
             {
                 if (cents != 0)
                 {
-                    return "ZERO" +" DOLLARS " + "AND " + GetHundredWord((int)cents) + " CENTS";
+                    return "ZERO" +" DOLLARS AND " + GetHundredWord((int)cents) + " CENTS";
                 }
                 return "ZERO DOLLARS";
             }
