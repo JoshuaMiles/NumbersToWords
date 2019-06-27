@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Numbers To Words";
+
+}
+
+@using NumbersToWords.Models
+@model FormModel
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+
+
+
+    <h2 class="text-center">@Html.DisplayFor(m => m.Word)</h2>
+
+    @Html.ValidationMessageFor(model => model.Number, "", new { @class = "text-danger" })
+    @Html.TextBoxFor(m => m.Number, new { @class = "form-control justify-content-center" })
+    <input id="Submit" type="submit" value="To Words" />
+
+
+}
+
