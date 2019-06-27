@@ -14,11 +14,11 @@ namespace NumbersToWords.Controllers
         {
             FormModel model = new FormModel();
             model.Word = "ZERO DOLLARS";
+            
             return View(model);
         }
 
         [HttpPost]
-        
         public ActionResult Index(FormModel model)
         {
             if (ModelState.IsValid)
@@ -28,14 +28,5 @@ namespace NumbersToWords.Controllers
             
             return View(model);
         }
-
-
-        //Gonna need some help here 
-
-        
-
-
-
-        
     }
 }
