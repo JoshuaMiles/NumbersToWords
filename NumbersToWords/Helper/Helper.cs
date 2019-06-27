@@ -101,11 +101,9 @@ namespace NumbersToWords
                 dollars /= 1000;
             } while (dollars > 0);
            
-
+            //Cast Enum Powers (The orders of magnitude) which correlates to the key
             foreach (KeyValuePair<int, long> item in dict)
             {
-                //Cast Enum Powers (The orders of magnitude) which correlates to the key
-
                 //If it's in the 'ONES' don't add a power to the returnWord
                 if (item.Key < 1 && item.Value > 0)
                 {
